@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+}
+
+.red {
+    background: #c71226;
+    height: 100px;
+}
+
+.blue {
+    background: #0d1b88;
+    height: 100px;
+    margin: 10px 0;
+}
+
+.green {
+    background: #397327;
+    height: 100px;
+}
+
+/* 
+    Margin controls the the space OUTSIDE an element
+
+    Padding controls the space inside an element
+
+    Border is between margin and padding
+*/
+
+.card {
+    color: #222222;
+    background: lightgray;
+    width: 300px;
+    margin-top: 50px;
+
+    /* auto on left and right will put element in the middle. */
+    margin-left: auto;
+    margin-right: auto;
+    
+    padding: 20px;
+
+    /* Border thickness */
+    border: 5px solid royalblue;
+    /* Border curve */
+    border-radius: 20px;
+}
+
+.following-button button{
+    border: 1px solid #cfd9de;
+    border-radius: 20px;
+    color: #0f1419;
+    padding: 10px 20px;
+
+    font-weight: bold;
+}
