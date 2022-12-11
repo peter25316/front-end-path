@@ -7,6 +7,8 @@ let sum = 0
 let hasBlackJack = false
 let isAlive = false
 let msg = ""
+// getElementById on works with id's
+// querySelector can work with id's and classes
 let msgEl = document.getElementById("message-el")
 let sumEl = document.querySelector("#sum-el")
 let cardsEl = document.querySelector("#cards-el")
