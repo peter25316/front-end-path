@@ -3,6 +3,7 @@ body {
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
     min-width: 400px;
+    border-radius: 5px;
 }
 
 #input-el {
@@ -13,13 +14,26 @@ body {
     box-sizing: border-box;
 }
 
-#input-btn {
-    color: white;
+button {
+    border: 1px solid #5f9341;
     padding: 10px 20px;
     margin: 5px 0;
-    background: #5f9341;
-    border: none;
     border-radius: 5px;
+}
+
+#input-btn {
+    color: white;
+    background: #5f9341;
+}
+
+#tab-btn {
+    color: white;
+    background: #5f9341;
+}
+
+#del-btn {
+    color: #5f9341;
+    background: white;
 }
 
 #ul-el {
