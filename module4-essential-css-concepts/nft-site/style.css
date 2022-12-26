@@ -3,7 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     margin: 0;
-    background: #421a74;
+    background: #2a0e4d;
     ;
 }
 
@@ -71,7 +71,7 @@ header,
 #body-container {
     width: 800px;
     margin: 10px auto;
-    border: 5px solid #280553;
+    border: 5px solid #af7cd1;
     border-radius: 15px;
 }
 
