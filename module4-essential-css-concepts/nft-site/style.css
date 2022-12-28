@@ -27,6 +27,10 @@ h3 {
     color: #d0aaff;
 }
 
+p {
+    line-height: 23px;
+}
+
 /* Links */
 
 a {
@@ -93,6 +97,36 @@ header,
 .feature-img {
     width: 300px;
     border-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 19px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.btn-dark {
+    background-color: #5f29a3;
+    color: whitesmoke;
+}
+
+.btn-mid {
+    background-color: #f0e0ff;
+    color: #5f29a3;
+}
+
+.btn-light {
+    background-color: whitesmoke;
+    color: #5f29a3;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #f3e885;
+    color: #2b283a;
 }
 
 footer {
