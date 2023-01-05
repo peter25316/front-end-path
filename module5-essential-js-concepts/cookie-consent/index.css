@@ -133,6 +133,7 @@ main {
     padding: 8px 16px;
     display: flex;
     justify-content: center;
+    gap: 10px;
 }
 
 .modal-btn {
@@ -165,4 +166,8 @@ input {
     height: 140px;
     line-height: 23px;
     margin-bottom: 0;
+}
+
+.reverse {
+    flex-direction: row-reverse;
 }

@@ -32,7 +32,7 @@
     </main>
     <div class="modal" id="modal">
         <div class="close-modal-btn-container">
-            <button class="modal-close-btn" id="modal-close-btn">X</button>
+            <button class="modal-close-btn" id="modal-close-btn" disabled>X</button>
         </div>
         <div class="modal-inner" id="modal-inner">
             <h2>We ❤️ Your Data!</h2>
@@ -44,7 +44,9 @@
                 <input type="email" name="email" placeholder="Enter you email" required>
                 <div class="modal-choice-btns" id="modal-choice-btns">
                     <button class="modal-btn" type="submit">Accept</button>
-                    <button class="modal-btn" type="button">Decline</button>
+                    <!-- Decline has type button bc if not the js will also assigned 
+                         it to "submit" type on the default -->
+                    <button class="modal-btn" type="button" id="decline-btn">Decline</button>
                 </div>
             </form>
         </div>
