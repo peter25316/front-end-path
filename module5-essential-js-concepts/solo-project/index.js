@@ -16,7 +16,7 @@ const getMenuHtml = (menuArray) => {
     })
     return menuHtml
 }
-const getCartHtml = () => {
+const getCartHtml = (menuArray) => {
     let cartHtml = `<h2 id="your-order">Your order</h2>`
     let totalPrice = 0
     menuArray.forEach(item => {
@@ -37,9 +37,21 @@ const getCartHtml = () => {
     return cartHtml
 }
 
+const getCheckoutHtml = () => {
+    return `
+        <h2>Enter card details</h2>
+        <form class="checkout-form" id="checkout-form">
+            <input type="text" name="name" placeholder="Enter your name"/>
+            <input type="text" name="name" placeholder="Enter your name"/>
+            <input type="text" name="name" placeholder="Enter your name"/>
+        </form>
+        <button class="pay-btn">Pay</button>`
+}
+
 const render = (menuArray) => {
     document.getElementById('menu').innerHTML = getMenuHtml(menuArray)
-    document.getElementById('cart').innerHTML = getCartHtml()
+    document.getElementById('cart').innerHTML = getCartHtml(menuArray)
+    document.getElementById('modal').innerHTML = getCheckoutHtml()
 }
 
 render(menuArray)
