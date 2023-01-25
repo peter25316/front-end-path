@@ -105,7 +105,7 @@ h3 {
 
 /* CART */
 
-.cart {
+.checkout {
     height: 380px;
     margin: 45px;
 }
@@ -148,7 +148,7 @@ h3 {
 /* MODAL */
 
 .modal {
-    display: none;
+    display: inline;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -186,7 +186,29 @@ h3 {
     border: 1px solid #757575;
 }
 
+.modal input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .pay-btn {
     font-size: 20px;
     line-height: 31px;
+    margin-top: 25px;
+}
+
+.confirmation {
+    background: #ECFDF5;
+    margin: 0 45px;
+    text-align: center;
+    font-size: 32px;
+    color: #065F46;
+    padding: 50px 0;
+}
+
+/* utility */
+
+.hidden {
+    display: none;
 }
