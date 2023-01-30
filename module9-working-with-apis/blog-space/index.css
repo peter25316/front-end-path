@@ -1,0 +1,42 @@
+body {
+    font-family: 'Karla', sans-serif;
+}
+
+* {
+    margin: 0;
+}
+
+nav {
+    padding: 10px;
+    background: beige;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+}
+
+#blog-list {
+    padding: 10px;
+}
+
+form {
+    display: grid;
+    padding: 10px;
+    background: lightblue;
+}
+
+textarea {
+    resize: none;
+}
+
+#post-title,
+#post-body {
+    margin: 0 0 10px;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
