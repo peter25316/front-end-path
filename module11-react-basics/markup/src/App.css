@@ -1,0 +1,22 @@
+.App {
+  padding: 1rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-items {
+  display: flex;
+  list-style: none;
+}
+
+.nav-items li {
+  padding: 0.6rem;
+}
+
+.nav-logo {
+  width: 40px;
+}

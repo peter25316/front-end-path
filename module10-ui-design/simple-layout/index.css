@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+/* 
+    - White Space
+    - Color 
+    - Contrast 
+    - Scale
+    - Alignment 
+    - Typography
+    - Visual Hierarchy 
+*/
+
+body {
+    font-family: Montserrat, sans-serif;
+    display: grid;
+    align-items: center;
+    height: 100vh;
+    background: url('./sky2_dark.jpg');
+    background-size: cover;
+    color: whitesmoke;
+}
+
+* {
+    margin: 0;
+}
+
+.container {
+    width: 50%;
+    margin-left: 4rem;
+    height: 50vh;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+span {
+    position: relative;
+}
+
+span:before {
+    position: absolute;
+    content: '';
+    height: .2em;
+    width: 80%;
+    bottom: .1em;
+    left: 1rem;
+    z-index: -1;
+    background: #e88a62;
+}
