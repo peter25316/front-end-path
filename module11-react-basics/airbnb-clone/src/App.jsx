@@ -1,20 +1,18 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Card from "./components/Card";
+import data from "./components/data";
 
 const App = () => {
+  const cards = data.map((item) => {
+    return <Card key={item.id} item={item}></Card>;
+  });
+
   return (
     <div className="App">
       <Header></Header>
       <Hero></Hero>
-      <Card
-        img="./katie-zaferes.png"
-        rating="5.0"
-        reviewCount={6}
-        country="USA"
-        title="Life Lessons with Katie Zaferes"
-        price={136}
-      ></Card>
+      <section className="card-list">{cards}</section>
     </div>
   );
 };
