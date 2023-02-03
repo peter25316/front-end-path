@@ -5,7 +5,7 @@ import data from "./components/data";
 
 const App = () => {
   const cards = data.map((item) => {
-    return <Card key={item.id} item={item}></Card>;
+    return <Card key={item.id} {...item}></Card>;
   });
 
   return (

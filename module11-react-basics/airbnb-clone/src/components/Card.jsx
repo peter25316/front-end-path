@@ -1,21 +1,21 @@
 const Card = (props) => {
   let badgeText;
-  if (props.item.openSpots === 0) badgeText = "SOLD OUT";
-  else if (props.item.location === "Online") badgeText = "ONLINE";
+  if (props.openSpots === 0) badgeText = "SOLD OUT";
+  else if (props.location === "Online") badgeText = "ONLINE";
 
   return (
     <div className="card">
       {badgeText && <div className="card-badge">{badgeText}</div>}
-      <img className="card-img" src={props.item.img} alt="" />
+      <img className="card-img" src={props.img} alt="" />
       <div className="card-stats">
         <img className="card-star" src="./images/star.png" />
-        <span>{props.item.rating}</span>
-        <span className="gray">({props.item.reviewCount}) • </span>
-        <span className="gray">{props.item.location}</span>
+        <span>{props.rating}</span>
+        <span className="gray">({props.reviewCount}) • </span>
+        <span className="gray">{props.location}</span>
       </div>
-      <p className="card-title">{props.item.title}</p>
+      <p className="card-title">{props.title}</p>
       <p>
-        <span className="card-price bold">From ${props.item.price}</span> / person
+        <span className="card-price bold">From ${props.price}</span> / person
       </p>
     </div>
   );
