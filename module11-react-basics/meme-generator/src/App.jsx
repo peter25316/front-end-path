@@ -1,7 +1,11 @@
+import Header from "./components/Header";
+import Meme from "./components/Meme";
+
 const App = () => {
   return (
     <div className="App">
-      <h1>Hello world</h1>
+      <Header></Header>
+      <Meme></Meme>
     </div>
   );
 };
