@@ -32,5 +32,11 @@ body {
 }
 
 .blob2 {
-  bottom: 0%;
+  bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .blob2 {
+    width: 40%;
+  }
 }

@@ -4,6 +4,7 @@ import Button from "./Button";
 import getQuestions from "./data/getQuestions";
 import "./styles/Quiz.css";
 import { nanoid } from "nanoid";
+import Confetti from "react-confetti";
 
 const Quiz = (props) => {
   const [questionSet, setQuestionSet] = useState([]);
@@ -69,16 +70,19 @@ const Quiz = (props) => {
   ));
 
   return (
-    <div className="quiz-container">
-      {questionsHtml}
-      <div className="quiz-inner">
-        {showAnswer && <h3>You scored {correctCount}/5 correct answers</h3>}
-        <Button
-          value={!showAnswer ? "Check answers" : "Play again"}
-          handleClick={!showAnswer ? handleShowAnswer : handleReset}
-        ></Button>
+    <>
+      {correctCount === 5 && <Confetti className="confetti"></Confetti>}
+      <div className="quiz-container">
+        {questionsHtml}
+        <div className="quiz-inner">
+          {showAnswer && <h3>You scored {correctCount}/5 correct answers</h3>}
+          <Button
+            value={!showAnswer ? "Check answers" : "Play again"}
+            handleClick={!showAnswer ? handleShowAnswer : handleReset}
+          ></Button>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

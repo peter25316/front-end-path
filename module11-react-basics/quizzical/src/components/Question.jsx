@@ -1,9 +1,8 @@
 import "./styles/Question.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { decode } from "html-entities";
 import { nanoid } from "nanoid";
 import Answer from "./Answer";
-import { useEffect } from "react";
 
 const Question = (props) => {
   const [answers, setAnswers] = useState(generateAnswers());
