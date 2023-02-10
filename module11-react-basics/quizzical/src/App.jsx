@@ -30,7 +30,7 @@ const App = () => {
   };
 
   return (
-    <div className="app">
+    <main className="app">
       <img className="blob1" src="blob1.png" alt="" />
       <img className="blob2" src="blob2.png" alt="" />
       {start ? (
@@ -47,7 +47,7 @@ const App = () => {
           gameOptions={gameOptions}
         ></Landing>
       )}
-    </div>
+    </main>
   );
 };
 

@@ -1,5 +1,6 @@
 html,
 body {
+  height: 100%;
   font-size: 16px;
 }
 
@@ -16,8 +17,7 @@ body {
 
 .app {
   position: relative;
-  width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .blob1,
@@ -32,5 +32,5 @@ body {
 }
 
 .blob2 {
-  bottom: 0;
+  bottom: 0%;
 }

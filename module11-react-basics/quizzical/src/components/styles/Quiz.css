@@ -1,21 +1,24 @@
 .quiz-container {
-  position: absolute;
   width: 80%;
-  max-width: 800px;
-  height: 80%;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  max-width: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template: auto / auto;
 }
 
 .quiz-inner {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 450px) {
+  .quiz-container {
+    position: static;
+    transform: none;
+    margin: auto;
+  }
 }
