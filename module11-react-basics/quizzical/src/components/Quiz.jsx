@@ -7,6 +7,8 @@ import { nanoid } from "nanoid";
 
 const Quiz = (props) => {
   const [questionSet, setQuestionSet] = useState([]);
+  const [showAnswer, setShowAnswer] = useState(false);
+  const [correctCount, setCorrectCount] = useState(0);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -14,7 +16,15 @@ const Quiz = (props) => {
       if (questions.length === 0) {
         props.startHandle();
       }
-      return setQuestionSet(questions);
+      setQuestionSet(
+        questions.map((question) => {
+          return {
+            ...question,
+            selectedAnswer: "",
+            id: nanoid(),
+          };
+        })
+      );
     });
 
     return () => {
@@ -22,14 +32,31 @@ const Quiz = (props) => {
     };
   }, []);
 
+  const handleShowAnswer = () => {
+    setShowAnswer(true);
+  };
+
+  const handleReset = () => {
+    props.startHandle();
+  };
+
   const questionsHtml = questionSet.map((question) => (
-    <Question key={nanoid()} {...question}></Question>
+    <Question
+      key={question.id}
+      {...question}
+      showAnswer={showAnswer}
+    ></Question>
   ));
+
+  console.log(questionSet);
 
   return (
     <div className="quiz-container">
       {questionsHtml}
-      <Button value="Check answers"></Button>
+      <Button
+        value={!showAnswer ? "Check answers" : "Reset"}
+        handleClick={!showAnswer ? handleShowAnswer : handleReset}
+      ></Button>
     </div>
   );
 };

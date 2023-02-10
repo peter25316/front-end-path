@@ -1,7 +1,4 @@
 const getQuestions = async (gameOptions) => {
-  const temp =
-    "https://opentdb.com/api.php?amount=5&category=23&difficulty=medium&type=multiple";
-
   const { category, difficulty, type } = gameOptions;
 
   let categoryQuery = "";
@@ -16,7 +13,6 @@ const getQuestions = async (gameOptions) => {
 
   const res = await fetch(url);
   const data = await res.json();
-  console.log("api");
   return data.results;
 };
 

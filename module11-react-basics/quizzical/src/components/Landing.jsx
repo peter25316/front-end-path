@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Button from "./Button";
 import "./styles/Landing.css";
 import categories from "./data/categories";
