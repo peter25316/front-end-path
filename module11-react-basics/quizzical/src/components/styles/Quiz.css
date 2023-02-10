@@ -1,6 +1,7 @@
 .quiz-container {
   position: absolute;
-  width: 60%;
+  width: 80%;
+  max-width: 800px;
   height: 80%;
   left: 0;
   right: 0;
@@ -9,6 +10,12 @@
   margin: auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz-inner {
+  display: flex;
   justify-content: center;
   align-items: center;
 }

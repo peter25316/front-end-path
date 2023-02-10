@@ -27,6 +27,12 @@ const Landing = (props) => {
   return (
     <div className="landing-container">
       <h1 className="landing-title">Quizzical</h1>
+      <p className="description">Test your knowledge!</p>
+      {props.noQuestionsErr && (
+        <h2 className="err">
+          Oops! We couldn't find any questions with these options!
+        </h2>
+      )}
       <form className="form" action="">
         <label className="form-label" htmlFor="category">
           Category:

@@ -4,6 +4,7 @@ import Quiz from "./components/Quiz";
 
 const App = () => {
   const [start, setStart] = useState(false);
+  const [noQuestionsErr, setNoQuestionErr] = useState(false);
   const [gameOptions, setGameOptions] = useState({
     category: "",
     difficulty: "",
@@ -12,6 +13,10 @@ const App = () => {
 
   const startHandle = () => {
     setStart((prevStart) => !prevStart);
+  };
+
+  const handleNoQuestions = (boolean) => {
+    setNoQuestionErr(boolean);
   };
 
   const handleChange = (e) => {
@@ -29,11 +34,16 @@ const App = () => {
       <img className="blob1" src="blob1.png" alt="" />
       <img className="blob2" src="blob2.png" alt="" />
       {start ? (
-        <Quiz startHandle={startHandle} gameOptions={gameOptions}></Quiz>
+        <Quiz
+          startHandle={startHandle}
+          handleNoQuestions={handleNoQuestions}
+          gameOptions={gameOptions}
+        ></Quiz>
       ) : (
         <Landing
           startHandle={startHandle}
           handleChange={handleChange}
+          noQuestionsErr={noQuestionsErr}
           gameOptions={gameOptions}
         ></Landing>
       )}

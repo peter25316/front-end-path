@@ -15,6 +15,9 @@ const Quiz = (props) => {
     getQuestions(props.gameOptions).then((questions) => {
       if (questions.length === 0) {
         props.startHandle();
+        props.handleNoQuestions(true);
+      } else {
+        props.handleNoQuestions(false);
       }
       setQuestionSet(
         questions.map((question) => {
@@ -32,8 +35,24 @@ const Quiz = (props) => {
     };
   }, []);
 
+  const handleSelect = (id, selectedAnswer) => {
+    if (selectedAnswer) {
+      setQuestionSet((questions) =>
+        questions.map((question) => {
+          return question.id === id
+            ? { ...question, selectedAnswer: selectedAnswer.value }
+            : question;
+        })
+      );
+    }
+  };
+
   const handleShowAnswer = () => {
     setShowAnswer(true);
+    questionSet.forEach((question) => {
+      if (question.correct_answer === question.selectedAnswer)
+        setCorrectCount((prevCount) => prevCount + 1);
+    });
   };
 
   const handleReset = () => {
@@ -44,19 +63,21 @@ const Quiz = (props) => {
     <Question
       key={question.id}
       {...question}
+      handleSelect={handleSelect}
       showAnswer={showAnswer}
     ></Question>
   ));
 
-  console.log(questionSet);
-
   return (
     <div className="quiz-container">
       {questionsHtml}
-      <Button
-        value={!showAnswer ? "Check answers" : "Reset"}
-        handleClick={!showAnswer ? handleShowAnswer : handleReset}
-      ></Button>
+      <div className="quiz-inner">
+        {showAnswer && <h3>You scored {correctCount}/5 correct answers</h3>}
+        <Button
+          value={!showAnswer ? "Check answers" : "Play again"}
+          handleClick={!showAnswer ? handleShowAnswer : handleReset}
+        ></Button>
+      </div>
     </div>
   );
 };

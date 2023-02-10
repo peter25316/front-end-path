@@ -3,9 +3,17 @@ import { useState } from "react";
 import { decode } from "html-entities";
 import { nanoid } from "nanoid";
 import Answer from "./Answer";
+import { useEffect } from "react";
 
 const Question = (props) => {
   const [answers, setAnswers] = useState(generateAnswers());
+
+  useEffect(() => {
+    const selectedAnswer = answers.filter((answer) => {
+      return answer.isSelected;
+    })[0];
+    props.handleSelect(props.id, selectedAnswer);
+  }, [answers]);
 
   function generateAnswer(value, isCorrect) {
     return {
