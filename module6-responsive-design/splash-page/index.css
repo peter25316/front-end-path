@@ -4,9 +4,17 @@ body {
   margin: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 /* =================
     Typography 
    ================= */
+
+section {
+  padding: 0 1rem;
+}
 
 h1 {
   font-size: 2.5rem;
@@ -38,6 +46,22 @@ p {
   font-weight: 900;
   margin-bottom: 0.5rem;
 }
+
+.top-text {
+  font-size: 0.875rem;
+  font-weight: 900;
+  padding-top: 0.25em;
+  border-top: 4px solid;
+  order: -1;
+  margin: 0 auto;
+}
+
+.fine-print {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: #858585;
+}
+
 /* =================
     Flex containers
    ================= */
@@ -52,11 +76,12 @@ p {
    ================= */
 
 .intro {
-  justify-content: center;
+  justify-content: space-between;
   min-height: 250px;
   text-align: center;
   color: #fff;
-  background-color: #9480e4;
+  background: #9480e4 url("./images/intro-bg.png");
+  background-size: cover;
 }
 
 /* ====================
@@ -72,9 +97,53 @@ p {
   width: 120px;
   border-radius: 50%;
 }
+
+.main-content p,
+form {
+  max-width: 450px;
+}
+
 /* =================
     Form
    ================= */
+
+input,
+button {
+  font-family: inherit;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.btn {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 1rem 0;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: white;
+  background: #8a71ec;
+  margin: 1rem 0;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: #b7a7f6;
+}
+
+input {
+  padding: 0.5rem;
+  margin: 0 0 0.75rem 0;
+  border: 1px solid #d1d5db;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid #8a71ec;
+  background-color: #e6e8ec;
+}
 
 /* =================
     Media queries 
@@ -96,6 +165,7 @@ p {
 
   .main-content {
     justify-content: center;
+    padding: 0 2rem;
   }
 
   h1 {
